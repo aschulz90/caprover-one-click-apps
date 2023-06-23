@@ -25,9 +25,7 @@ services:
             discovery.type: single-node
             discovery.zen.minimum_master_nodes: $$cap_elasticsearch_minimum_master_nodes
             discovery.zen.ping.unicast.hosts: $$cap_elasticsearch_unicast_hosts
-        caproverExtra:
-            containerHttpPort: $$cap_container_search_port
-    $$cap_appname-fusionauth:
+    $$cap_appname:
         image: fusionauth/fusionauth-app:$$cap_fusionauth_version
         depends_on:
             - $$cap_appname-db
